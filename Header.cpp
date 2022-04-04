@@ -7,6 +7,11 @@ voctree::BinaryTree::Node::Node(Word* data)
 	this->data = data;
 }
 
+voctree::BinaryTree::Node::~Node()
+{
+	delete data;
+}
+
 voctree::Word::Word()
 {
 	this->counter = 0;
@@ -101,7 +106,6 @@ void voctree::BinaryTree::create_new_voc(BinaryTree* sech)
 		
 		q.push(node);
 	}
-	
 	return;
 }
 
@@ -180,6 +184,21 @@ void voctree::BinaryTree::inorder(Node* z)
 	
 
 }
+voctree::BinaryTree::~BinaryTree()
+{
+	DestroyRec(head);
+	
+}
+
+void voctree::BinaryTree::DestroyRec(Node* node)
+{
+	if (node) {
+		DestroyRec(node->left);
+		DestroyRec(node->right);
+		delete node;
+	}
+}
+
 void startprog() {
 
 	voctree::BinaryTree binarytree = voctree::BinaryTree();

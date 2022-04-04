@@ -14,6 +14,7 @@ namespace voctree {
 			Node* right=nullptr;
 			Word* data;
 			Node(Word* data);
+			~Node();
 		};
 		Node* head = nullptr;
 	public:
@@ -22,6 +23,8 @@ namespace voctree {
 		Node* look_for_max(BinaryTree* z, Node* maxn,char* nametemp);
 		void print_out_second(BinaryTree* root);
 		void inorder(Node* z);
+		~BinaryTree();
+		void DestroyRec(Node* t);
 	};
 }
 void startprog();
