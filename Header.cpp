@@ -9,7 +9,7 @@ voctree::BinaryTree::Node::Node(Word* data)
 
 voctree::BinaryTree::Node::~Node()
 {
-	delete data;
+	delete data,left,right;
 }
 
 voctree::Word::Word()
