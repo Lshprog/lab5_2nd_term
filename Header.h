@@ -21,6 +21,7 @@ namespace voctree {
 		void create_new_voc(BinaryTree* sech);
 		Node* look_for_max(BinaryTree* z, Node* maxn,char* nametemp);
 		void print_out_second(BinaryTree* root);
+		void inorder(Node* z);
 	};
 }
 void startprog();

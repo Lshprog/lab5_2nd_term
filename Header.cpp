@@ -61,7 +61,8 @@ void voctree::BinaryTree::add_word_by_alph(Word* w,Node* temp)
 void voctree::BinaryTree::create_new_voc(BinaryTree* sech)
 {
 	sech->print_out_second(sech);
-
+	std::cout << std::endl;
+	sech->inorder(sech->head);
 
 	char nametemp[10]="sdsadsa";
 	std::queue<Node*> q;
@@ -168,7 +169,17 @@ void voctree::BinaryTree::print_out_second(BinaryTree* roots)
 	return;
 }
 
+void voctree::BinaryTree::inorder(Node* z)
+{
+	if (z == nullptr) {
+		return;
+	}
+	inorder(z->left);
+	std::cout << z->data->name << " " << z->data->counter << "\n";
+	inorder(z->right);
+	
 
+}
 void startprog() {
 
 	voctree::BinaryTree binarytree = voctree::BinaryTree();
