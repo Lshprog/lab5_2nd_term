@@ -29,11 +29,11 @@ voctree::Word::Word(char* name, char* translation, int counter)
 
 void voctree::BinaryTree::add_word_by_alph(Word* w,Node* temp)
 {
+	Node* cur = new Node(w);
 	if (temp == NULL) {
 		temp = head;
 	}
 	if (head==nullptr) {
-		Node* cur = new Node(w);
 		head = cur;
 		return;
 	}
@@ -42,7 +42,6 @@ void voctree::BinaryTree::add_word_by_alph(Word* w,Node* temp)
 			continue;
 		else if (int(temp->data->name[i]) > int(w->name[i])) {
 			if (temp->left == nullptr) {
-				Node* cur = new Node(w);
 				temp->left = cur;
 				return;
 			}
@@ -51,7 +50,6 @@ void voctree::BinaryTree::add_word_by_alph(Word* w,Node* temp)
 		}
 		else if (int(temp->data->name[i]) < int(w->name[i])) {
 			if (temp->right == nullptr) {
-				Node* cur = new Node(w);
 				temp->right = cur;
 				return;
 			}
@@ -60,6 +58,7 @@ void voctree::BinaryTree::add_word_by_alph(Word* w,Node* temp)
 		}
 	}
 	std::cout << "Such word already exist \n";
+	delete cur;
 	return;
 }
 
@@ -106,6 +105,7 @@ void voctree::BinaryTree::create_new_voc(BinaryTree* sech)
 		
 		q.push(node);
 	}
+
 	return;
 }
 
