@@ -58,7 +58,6 @@ void voctree::BinaryTree::add_word_by_alph(Word* w,Node* temp)
 		}
 	}
 	std::cout << "Such word already exist \n";
-	delete cur;
 	return;
 }
 
